@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Model Meetup</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+        <!-- The top bar -->
+        <div id="topbarDiv">
+            <!-- Title -->
+            <h1>Model<em class="em_title">Meetup</em></h1>
+            <!-- Options for model selection -->
+            <span class="optionSpan">
+                <h2>Selected Model:</h2>
+                <select id="currentModelSelect">
+                    <option>Choose a model</option>
+                </select>
+                <button id="removeButton">Remove Current Model</button>
+                <button id="addButton">Add Model</button>
+            </span>
+            <!-- Options for the selected model's properties -->
+            <span class="optionSpan">
+                <h2>Properties:</h2>
+                <select id="currentPropertySelect">
+                    <option>Position</option>
+                    <option>Rotation</option>
+                    <option>Scale</option>
+                </select>
+                <input id="xInput" type="text" name="property">
+                <input id="yInput" type="text" name="property">
+                <input id="zInput" type="text" name="property">
+                <button id="updateButton">Update</button>
+            </span>
+        </div>
+        <!-- End top bar -->
+
+        <!-- The add model modal/popup. HIDDEN at first. -->
+        <div id="addModelModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Define your new model.</p>
+                <select id="geometrySelect">
+                    <option>Plane</option>
+                    <option>Box</option>
+                    <option>Sphere</option>
+                    <option>Cone</option>
+                    <option>JSON File</option>
+                </select>
+                <div id="planeInput">
+                    <!-- Implement further plane control here -->
+                </div>
+                <div id="boxInput">
+                    <!-- Implement further box control here -->
+                </div>
+                <div id="sphereInput">
+                    <!-- Implement further sphere control here -->
+                </div>
+                <div id="coneInput">
+                    <!-- Implement further cone control here -->
+                </div>
+                <div id="colorDiv">
+                    Color (in Hex) <input id="colorInput" type="text" name="color" value="0xFFFFFF">
+                </div>
+                <div id="JSONDiv">
+                    Filepath: ./models/<input id="JSONFilename" type="text" name="fname">.json
+                </div>
+                <button id="addButton2">Add</button>
+            </div>
+        </div>
+        <!-- End modal/popup -->
+        
+        <!-- The remove model modal/popup. HIDDEN at first. -->
+        <div id="removeModelModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Are you sure you want to remove the selected model?</p>
+                <button id="removeYes">Yes</button>
+                <button id="removeNo">No</button>
+            </div>
+        </div>
+        <!-- End modal/popup -->
+
+        <!--<script src="./scripts/jquery-3.2.0.min.js"></script>-->
+        <script src="./scripts/three.min.js"></script>
+        <script src="./scripts/Detector.js"></script>
+        <script src="./scripts/OrbitControls.js"></script>
+        <script src="./scripts/modelMeetup.js"></script>
+    </body>
+</html>
